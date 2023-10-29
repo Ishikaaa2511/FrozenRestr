@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comforter+Brush&family=Dancing+Script:wght@700&family=Great+Vibes&family=Poppins:ital,wght@1,200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+/*  <=========== Navigation CSS ===========>  */
+#head{
+    /* background-color: red; */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .2);
+    background: #fff;
+  }
+  #head .nav{
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #head .nav .logo img{
+    height: 70px;
+  }
+  
+  #head .nav .nav-list ul{
+    display:flex;
+    justify-content: space-around;
+  }
+  
+  #head .nav .nav-list ul li{
+    list-style: none;
+    margin-left: 40px;
+    font-size: 30px;
+  }
+  
+  #head .nav .nav-list ul li a{
+    color:#362b49;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: all 1s ease;
+  }
+  
+  #head .nav .nav-list ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  #head .nav #nav-list.active ul li a{
+    color:gray;
+    /* position: relative; */
+  }
+  
+  #head .nav .nav-list.active ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: rgba(128, 128, 128, .7);
+    transition: all 0.3s ease;
+  }
+  
+  #head .nav .nav-list ul li a:hover::after{
+    width: 100%;
+    left: 0;
+  }
+  
+  #head .nav .nav-list ul li a.active::after{
+    width: 100%;
+    left: 0;
+  }
+  
+  #t-box{
+    display: none;  
+  }
+  
+  #mob-list{
+    display: none;
+  }
+  
+  /*  <=========== Mobile Nav CSS ===========>  */
+  
+.contact{
+      position: relative;
+      min-height: 100vh;
+      padding: 50px 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: url(contactusbd.jpeg);
+      background-size: cover;
+}
+.contact .content{
+    max-width: 500px;
+    text-align:left;
+}
+.contact .content h2{
+    font-size: 45px;
+    font-weight: bolder;
+    color: rgb(241, 162, 51);
+}
+.contact .content p{
+    font-size: 50px;
+    font-weight:bolder;
+    color: #fff;
+}
+.container{
+    width:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px ;
+}
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .contactInfo .box{
+    position: relative;
+    padding:20px 0 ;
+    display: flex;
+}
+.container .contactInfo .box .icon
+{
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px;
+}
+.container .contactInfo .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 22px;
+    color: #0b0b0a;
+    flex-direction: column;
+    font-weight: 900;
+}
+.container .contactInfo .box .icon h3{
+    font-weight: 1000;
+    color: #00bcd4;
+}
+.contactform{
+    width: 40%;
+    padding: 40px;
+    background-color: #fff;
+}
+.contactform h2{
+    font-size: 30px;
+    color: #333;
+    font-weight: 700;
+}
+.contactform .inputbox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactform .inputbox input,
+.contactform .inputbox textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+.contactform .inputbox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.contactform .inputbox input:focus ~ span,
+.contactform .inputbox input:valid ~ span,
+.contactform .inputbox textarea:focus ~ span,
+.contactform .inputbox textarea:valid ~ span
+{
+    color:#3ea6b1 ;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.contactform .inputbox input[type="submit"]
+{
+    width: 100px;
+    background:#3ea6b1 ;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+@media (max-width: 991px)
+{
+    .contact{
+        padding: 50px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container .contactInfo,
+    .contactform{
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    .container .contactInfo .box .icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+/*  <=========== Footer Section ===========>  */
+footer {
+  background: white;
+  padding: 50px 0;
+  padding-bottom: 0;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+footer .container {
+  padding-bottom: 60px;
+}
+
+footer .foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+footer .foot .icon-box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 30%;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+footer .foot .icon-box .icon {
+  font-size: 25px;
+  background-color: white;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  display: flex;
+  margin: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .foot .icon-box .icon a {
+  color: #362b49;
+  transition: 0.5s ease;
+}
+
+footer .foot .icon-box .icon a:hover {
+  transform: rotate(360deg);
+}
+
+footer .quick-links {
+  width: 100%;
+  padding: 20px;
+}
+
+footer .quick-links ul {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .quick-links ul li a {
+  position: relative;
+  color: gray;
+  padding: 2px 0;
+  text-decoration: none;
+  
+}
+
+footer .quick-links ul li a::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 0px;
+  background-color: gray;
+  transition: all 0.3s ease;
+}
+
+
+footer .quick-links ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+footer .copyright {
+  width: 100vw;
+  height: fit-content;
+  background-color: #362b49;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+footer .copyright p {
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+@media (max-width: 870px) {
+
+  footer .foot .icon-box,
+  footer .quick-links ul {
+    width: 80%;
+  }
+
+  footer .copyright p {
+    max-width: 30ch;
+  }
+
+}
+
+@media (max-width: 370px) {
+
+  footer .foot .icon-box,
+  footer .quick-links ul {
+    width: 90%;
+  }
+
+}

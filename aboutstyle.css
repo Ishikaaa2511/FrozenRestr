@@ -1,0 +1,399 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/*  <=========== Navigation CSS ===========>  */
+#head{
+    /* background-color: red; */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .2);
+    background: #fff;
+  }
+  #head .nav{
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #head .nav .logo img{
+    height: 70px;
+  }
+  
+  #head .nav .nav-list ul{
+    display:flex;
+    justify-content: space-around;
+  }
+  
+  #head .nav .nav-list ul li{
+    list-style: none;
+    margin-left: 40px;
+    font-size: 30px;
+  }
+  
+  #head .nav .nav-list ul li a{
+    color: #362b49;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    transition: all 1s ease;
+  }
+  
+  #head .nav .nav-list ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  #head .nav #nav-list.active ul li a{
+    color:gray;
+    /* position: relative; */
+  }
+  
+  #head .nav .nav-list.active ul li a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    height: 1px;
+    width: 0;
+    bottom: 5px;
+    background-color: rgba(128, 128, 128, .7);
+    transition: all 0.3s ease;
+  }
+  
+  #head .nav .nav-list ul li a:hover::after{
+    width: 100%;
+    left: 0;
+  }
+  
+  #head .nav .nav-list ul li a.active::after{
+    width: 100%;
+    left: 0;
+  }
+  
+  #t-box{
+    display: none;  
+  }
+  
+  #mob-list{
+    display: none;
+  }
+  
+  /*  <=========== Mobile Nav CSS ===========>  */
+
+  
+/*  <=========== About Section CSS ===========>  */
+section.about{
+  width: 100vw;
+  background-color: white;
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+section.about .about-cont .about-det .heading{
+  text-align: left;
+}
+
+section.about .about-cont .about-det .heading h1 span{
+  font-size: 55px;
+}
+
+section.about .about-cont .about-det p{
+  font-size: 30px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+@media (max-width: 980px) {
+
+  section.about{
+      padding-top: 20px;
+  }
+  
+  section.about .about-cont{
+      flex-direction: column;
+  }
+}
+
+/*  <=========== Image Animation ===========>  */
+@keyframes anime {
+  0%{
+      transform: translateY(0px);
+  }
+
+  25%{
+      transform: translateY(-30px);
+  }
+
+  50%{
+      transform: translateY(0px);
+  }
+
+  75%{
+      transform: translateY(30px);
+  }
+
+  100%{
+      transform: translateY(0px);
+  }
+}
+
+
+/* <====== About CSS =====> */
+
+section.about {
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.about .container {
+  width: 90%;
+}
+
+section.about .container .about-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.about .container .about-cont .about-det {
+  width: 60%;
+}
+
+section.about .container .about-cont .ab-im-con {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.about .container .about-cont .ab-im-con  img {
+  width: 80%;
+}
+
+/*  <=========== About Stat CSS ===========>  */
+section.stats{
+  background: linear-gradient(rgba(35,43,56,0.9),rgba(35,43,56,0.9)), url(booking.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 30vh;
+}
+
+section.stats .stat-cont{
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+section.stats .stat-cont .stat-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 150px;
+  width: 150px;
+  padding: 10px;
+  margin: 30px;
+}
+
+section.stats .stat-cont .stat-box h3{
+  text-align: center;
+  color: #3ea6b1;
+}
+
+section.stats .stat-cont .stat-box .stat-icon{
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+section.stats .stat-cont .stat-box .stat-icon i{
+  font-size: 65px;
+  color: #3ea6b1;
+}
+
+
+section.review-post {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+section.review-post .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+section.review-post .container img {
+  width: 300px;
+  border: 2px solid #362b49;
+}
+
+
+section.review-post .container img.active {
+  width: 400px;
+}
+
+/*  <=========== Footer Section ===========>  */
+footer {
+  background: white;
+  padding: 50px 0;
+  padding-bottom: 0;
+  overflow-x: hidden;
+  width: 100%;
+
+}
+
+footer .container {
+  padding-bottom: 60px;
+  width: calc(100%-200px);
+}
+
+footer .foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+footer .foot .icon-box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 30%;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+footer .foot .icon-box .icon {
+  font-size: 25px;
+  background-color: white;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .foot .icon-box .icon a {
+  color: #362b49;
+  transition: 0.5s ease;
+}
+
+footer .foot .icon-box .icon a:hover {
+  transform: rotate(360deg);
+}
+
+footer .quick-links {
+  width: 100%;
+  padding: 20px;
+}
+
+footer .quick-links ul {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .quick-links ul li a {
+  position: relative;
+  color: gray;
+  padding: 2px 0;
+}
+
+footer .quick-links ul li a::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 0px;
+  background-color: gray;
+  transition: all 0.3s ease;
+}
+
+
+footer .quick-links ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+footer .copyright {
+  width: 100vw;
+  height: fit-content;
+  background-color: #362b49;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+footer .copyright p {
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+@media (max-width: 870px) {
+
+  footer .foot .icon-box,
+  footer .quick-links ul {
+    width: 80%;
+  }
+
+  footer .copyright p {
+    max-width: 30ch;
+  }
+
+}
+
+@media (max-width: 370px) {
+
+  footer .foot .icon-box,
+  footer .quick-links ul {
+    width: 90%;
+  }
+
+}

@@ -1,0 +1,688 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/*  <=========== Navigation CSS ===========>  */
+#head {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .2);
+  background: #fff;
+}
+
+#head .nav {
+  width: 90vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#head .nav .logo img {
+  height: 70px;
+}
+
+#head .nav .nav-list ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+#head .nav .nav-list ul li {
+  list-style: none;
+  margin-left: 40px;
+  font-size: 30px;
+}
+
+#head .nav .nav-list ul li a {
+  color: #362b49;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  transition: all 1s ease;
+}
+
+#head .nav .nav-list ul li a::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 5px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+#head .nav #nav-list.active ul li a {
+  color: gray;
+  /* position: relative; */
+}
+
+#head .nav .nav-list.active ul li a::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 5px;
+  background-color: rgba(128, 128, 128, .7);
+  transition: all 0.3s ease;
+}
+
+#head .nav .nav-list ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+#head .nav .nav-list ul li a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+#t-box {
+  display: none;
+}
+
+#mob-list {
+  display: none;
+}
+
+/*  <=========== Mobile Nav CSS ===========>  */
+
+/*  <=========== Home Section CSS ===========>  */
+section.home {
+  width: 100%;
+  background: url(sofaseating1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 80px;
+}
+
+section.home .container {
+  width: 90vw;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* section.home .container svg {
+  height: 150px;
+  fill: #d0803e;
+  animation: svgg 1s linear ;
+} */
+
+svg {
+  display: block;
+  font-family: 'Montserrat';
+  font-size: 13.5em;
+  height: 200px;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #362b49;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: whites;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #3ea6b1;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #3ea6b1;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke:  #362b49;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+section.home .container h3 {
+  background: rgba(208, 128, 62, .3);
+  padding: 7px 10px;
+  color: #fff;
+  font-size: 32px;
+}
+
+section.home .container a {
+  background-color: #362b49;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all .3s ease;
+  border: 2px solid #362b49;
+}
+
+@keyframes svgg {
+  0% {
+    fill: rgb(255, 255, 255, 0);
+    stroke: #fff;
+    stroke-dashoffset: 800;
+    opacity: 1;
+  }
+
+  100% {
+    fill: rgb(255, 255, 255, 1);
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+section.home .container a:hover {
+  background-color: transparent;
+  border: 2px solid #362b49;
+  color: white;
+}
+
+
+
+/*  <=========== Home Section CSS End ===========>  */
+
+/*  <=========== Button CSS ===========>  */
+
+
+
+
+
+/*  <=========== Outlet Images ===========>  */
+
+section.aboutoutlet {
+  padding: 50px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+  grid-gap: 20px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+section.aboutoutlet .container {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+section.aboutoutlet .aboutimages {
+  margin-bottom: 75px;
+  width: 450px;
+  position: relative;
+}
+
+section.aboutoutlet .aboutimages img {
+  width: 100%;
+}
+
+/*  <=========== Features Section CSS ===========>  */
+section.feature {
+  background-color: #89d5dd;
+  padding: 50px 0;
+}
+
+section.feature h1 {
+  color: black ;
+  font-size: 70px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ft-box {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.ft-box .feat {
+  background: white;
+  box-shadow: 10px 10px 5px 0px #3ea6b1;
+  -webkit-box-shadow: 10px 10px 5px 0px #3ea6b1;
+  -moz-box-shadow: 10px 10px 5px 0px #3ea6b1;
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ft-box .feat .ft-icon i {
+  font-size: 40px;
+  color: black;
+  background-color: transparent;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 1250px) {
+
+  .feat {
+    margin-bottom: 30px;
+  }
+
+}
+
+/*  <=========== Footer Section ===========>  */
+footer {
+  background: white;
+  padding: 50px 0;
+  padding-bottom: 0;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+footer .container {
+  padding-bottom: 60px;
+}
+
+footer .foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+footer .foot .icon-box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 30%;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+footer .foot .icon-box .icon {
+  font-size: 25px;
+  background-color: white;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .foot .icon-box .icon a {
+  color: #362b49;
+  transition: 0.5s ease;
+}
+
+footer .foot .icon-box .icon a:hover {
+  transform: rotate(360deg);
+}
+
+footer .quick-links {
+  width: 100%;
+  padding: 20px;
+}
+
+footer .quick-links ul {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .quick-links ul li a {
+  position: relative;
+  color: gray;
+  padding: 2px 0;
+  text-decoration: none;
+}
+
+footer .quick-links ul li a::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 0px;
+  background-color: gray;
+  transition: all 0.3s ease;
+}
+
+
+footer .quick-links ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+footer .copyright {
+  width: 100vw;
+  height: fit-content;
+  background-color: #362b49;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+footer .copyright p {
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+@media (max-width: 870px) {
+
+  footer .foot .icon-box,
+  footer .quick-links ul {
+    width: 80%;
+  }
+
+  footer .copyright p {
+    max-width: 30ch;
+  }
+
+}
+
+@media (max-width: 370px) {
+
+  footer .foot .icon-box,
+  footer .quick-links ul {
+    width: 90%;
+  }
+
+}
+
+/*  <=========== Swiper CSS ===========>  */
+section.testimonials .test {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+section.testimonials .container {
+  margin-inline: auto;
+}
+
+section.testimonials .test .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+section.testimonials .test .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 320px;
+  height: 360px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  filter: blur(1px);
+  border-radius: 10px;
+  /* border: 2px solid #159957; */
+}
+
+section.testimonials .test .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #362b49;
+  border-radius: 10px;
+}
+
+section.testimonials .test .swiper-slide-active {
+  filter: blur(0px);
+}
+
+section.testimonials .test .swiper-3d .swiper-slide-shadow-right,
+section.testimonials .test .swiper-3d .swiper-slide-shadow-left {
+  background-image: none;
+}
+
+
+
+/*  <=========== Scroll Bar CSS ===========>  */
+body::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff;
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #3ea6b1;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid rgb(241, 240, 239);
+  /* creates padding around scroll thumb */
+}
+
+
+/* Menu Section CSS */
+section.menu {
+  width: 100%;
+  margin-top: 80px;
+}
+
+section.menu .container {
+  width: 90%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+section.menu .container .menu-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  min-width: 30%;
+  background: rgb(235, 207, 172);
+  border-radius: 20px;
+}
+
+section.menu .container .menu-box .tag {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+section.menu .container .menu-box .tag .veg {
+  width: 20px;
+  height: 20px;
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.menu .container .menu-box .tag .veg .box {
+  width: 10px;
+  height: 10px;
+  background: green;
+  border-radius: 50%;
+}
+
+section.menu .container .menu-box .tag p {
+  background: rgba(255, 0, 0, .3);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 3px;
+}
+
+section.menu .container .menu-box .category {
+  background: rgba(255, 0, 0, .3);
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 3px;
+  margin: 8px 0;
+  width: fit-content;
+}
+
+section.menu .container img {
+  width: 150px;
+  border-radius: 8px;
+}
+
+section.menu .container button {
+  outline: none;
+  padding: 10px;
+  color: #fff;
+  background: #362b49;
+  border-radius: 3px;
+  border: 2px solid #fff;
+}
+
+.newmenu {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.newmenu h1 {
+  text-align: center;
+}
+
+.newmenu .container {
+  width: 90%;
+  padding: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.newmenu .container .con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 40%;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.newmenu .container .con .main .head {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.newmenu .container .con .main .head h3 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  max-height: inherit;
+  text-overflow: unset;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: visible;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 15px;
+}
+
+.newmenu .container .con .main .head .veg {
+  width: 15px;
+  height: 15px;
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.newmenu .container .con .main .head .veg .box {
+  width: 8px;
+  height: 8px;
+  background: green;
+  border-radius: 50%;
+}
+
+.newmenu .container .con .main p {
+  color: #666;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+  max-height: inherit;
+  text-overflow: unset;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: visible;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.newmenu .container .con button {
+  outline: none;
+  padding: 10px;
+  color: #fff;
+  background: #362b49;
+  border-radius: 3px;
+  border: 2px solid #fff;
+}

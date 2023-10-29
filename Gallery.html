@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    
+    <!---- Font Awesome Cdn Linkage ------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Dancing+Script:wght@500;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+        
+    <!------- Favicon Linkage --------->
+    <link rel="shortcut icon" href="IMAGE/fav.png" type="image/x-icon">
+
+</head>
+
+<style>
+    .gal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: sans-serif;
+      margin-top: 80px;
+    }
+/*  <=========== Navigation CSS ===========>  */
+#head{
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .2);
+  background: #fff;
+}
+#head .nav{
+  width: 90vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#head .nav .logo img{
+  height: 70px;
+}
+
+#head .nav .nav-list ul{
+  display:flex;
+  justify-content: space-around;
+}
+
+#head .nav .nav-list ul li{
+  list-style: none;
+  margin-left: 40px;
+  font-size: 30px;
+}
+
+#head .nav .nav-list ul li a{
+  color:#362b49;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  transition: all 1s ease;
+}
+
+#head .nav .nav-list ul li a::after{
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 5px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+#head .nav #nav-list.active ul li a{
+  color:gray;
+  /* position: relative; */
+}
+
+#head .nav .nav-list.active ul li a::after{
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 5px;
+  background-color: rgba(128, 128, 128, .7);
+  transition: all 0.3s ease;
+}
+
+#head .nav .nav-list ul li a:hover::after{
+  width: 100%;
+  left: 0;
+}
+
+#head .nav .nav-list ul li a.active::after{
+  width: 100%;
+  left: 0;
+}
+
+#t-box{
+  display: none;  
+}
+
+#mob-list{
+  display: none;
+}
+
+/*  <=========== Mobile Nav CSS ===========>  */
+
+h1 {
+  color: #362b49;
+}
+.grid-container {
+  columns: 5 200px;
+  column-gap: 1.5rem;
+  width: 90%;
+  margin: 0 auto;
+}
+.grid-container div {
+    width: 150px;
+    margin: 0 1.5rem 1.5rem 0;
+    display: inline-block;
+    width: 100%;
+    border: solid 2px black;
+    padding: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    transition: all .25s ease-in-out;
+}
+/* .grid-container div:hover img {
+      filter: grayscale(0);
+    }
+    .grid-container div:hover {
+      border-color: coral;
+    } */
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+      transition: all .25s ease-in-out;
+    }
+    p {
+      margin: 5px 0;
+      padding: 0;
+      text-align: center;
+      font-style: italic;
+    }
+        
+/*  <=========== Footer Section ===========>  */
+footer{
+  background: white;
+  padding: 50px 0;
+  padding-bottom: 0;
+  overflow-x: hidden;
+  width: 100vw;
+}
+footer .container{
+  padding-bottom: 60px;
+}
+footer .foot{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+footer .foot .icon-box{
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  height: 30%;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+footer .foot .icon-box .icon{
+  font-size: 25px;
+  background-color: white;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .foot .icon-box .icon a{
+  color: #362b49;
+  transition: 0.5s ease;
+}
+
+footer .foot .icon-box .icon a:hover{
+  transform: rotate(360deg);
+}
+
+footer .quick-links{
+  width: 100%;
+  padding: 20px;
+}
+
+footer .quick-links ul{
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .quick-links ul li a{
+  position: relative;
+  color: gray;
+  padding: 2px 0;
+}
+
+footer .quick-links ul li a::after{
+  position: absolute;
+  content: '';
+  left: 50%;
+  height: 1px;
+  width: 0;
+  bottom: 0px;
+  background-color: gray;
+  transition: all 0.3s ease;
+}
+
+
+footer .quick-links ul li a:hover::after{
+  width: 100%;
+  left: 0;
+}
+
+footer .copyright{
+  width: 100vw;
+  height: fit-content;
+  background-color:#362b49;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+footer .copyright p{
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.5;
+  padding: 10px 0;
+}
+
+@media (max-width: 870px){
+
+  footer .foot .icon-box,
+  footer .quick-links ul{
+      width: 80%;
+  }
+
+  footer .copyright p{
+      max-width: 30ch;
+  }
+
+}
+
+@media (max-width: 370px){
+
+  footer .foot .icon-box,
+  footer .quick-links ul{
+      width: 90%;
+  }
+
+}
+
+
+
+
+</style>
+
+<body>
+     <!----- Navigation Start ------>
+     <header id="head">
+      <div class="nav">
+          <div class="logo">
+              <img src="frozenlogo.png" alt="logo" id="logo">
+          </div>
+          <h1
+              style="color:#362b49; font-style:italic ;font-size: 60px;font-family: 'Great Vibes', cursive ;">
+              Frozen Restro </h1>
+          <div class="nav-list" id="nav-list">
+              <ul>
+                  <li><a href="index.html" class="active">Home</a></li>
+                  <li><a href="aboutus.html">About Us</a></li>
+                  <li><a href="Gallery.html">Gallery</a></li>
+                  <li><a href="menu.html">Menu</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+          </div>
+      </div>
+  </header>
+  <!----- Navigation End ------>
+  <!----- Navigation Mobile Start ------>
+  <div id="t-box">
+      <div id="toggle"></div>
+  </div>
+  <div id="mob-list">
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+  </div>
+  <!----- Navigation Mobile End ------>
+    <section class="gal">
+        <!-- <h1>Gallery</h1> -->
+      <div class="grid-container">
+        <div>
+          <img class='grid-item grid-item-1' src='outlet main.jpeg' alt=''>
+          <p>"Attractive Ambience!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-2' src='pic2.jpeg' alt=''>
+          <p>"Seating area."</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-3' src='freshlimesoda.jpeg' alt=''>
+          <p>"Freshh Lime!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-4' src='cottoncandy.jpeg' alt=''>
+          <p>"Cotton Candy!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-5' src='nuttela waffle.jpeg' alt=''>
+          <p>"Nutella Waffle.."</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-6' src='margritapizza.jpeg' alt=''>
+          <p>"Pizzaa..."</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-7' src='goodvbsfront.jpeg' alt=''>
+          <p>"Bubble waffle!!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='paneertikka.jpeg' alt=''>
+          <p>"Tandoori Flavours."</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='chimneycone.jpeg' alt=''>
+          <p>"Chimney cone..?!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-10' src='chinesechaat.jpeg' alt=''>
+          <p>"chinese chaat"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-7' src='mangopunch.jpeg' alt=''>
+          <p>"Summer drinks..!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='redvelvetpancakes.jpeg' alt=''>
+          <p>"Mini pancakes!!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='sexonthebeach.jpeg' alt=''>
+          <p>"Sex on the Beach"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-10' src='squarewaffle.jpeg' alt=''>
+          <p>"Dessert love!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-7' src='3mocktails.jpeg' alt=''>
+          <p>"Mojito and you , Mint to be together!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='dahikesholey.jpeg' alt=''>
+          <p>"DAHI KE SHOLEY"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='minipancakes.jpeg' alt=''>
+          <p>"mini pancakes with cottoncandy bed!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-10' src='icecreamstuffedcandy.jpeg' alt=''>
+          <p>"Ice-cream stuffed candy!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-7' src='lamp.jpeg' alt=''>
+          <p>"Isn't this pretty..?"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='pastafront.jpeg' alt=''>
+          <p>"Pasta + Garlic bread + Mocktail= love!!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='heartpizza.jpeg' alt=''>
+          <p>"Valentine's Special"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-10' src='sofaseating.jpeg' alt=''>
+          <p>"what a view!!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-7' src='tawaicecream.jpeg' alt=''>
+          <p>"Ice cream rolls!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='outletballoons.jpeg' alt=''>
+          <p>"decor.."</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='burger.jpeg' alt=''>
+          <p>"BURGER..!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-10' src='enjoyfront.jpeg' alt=''>
+          <p>"Best memories are made around the table!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='aloonazakat.jpeg' alt=''>
+          <p>"Aloo Nazakat"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='fries.jpeg' alt=''>
+          <p>"Did you said Fries..?"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-10' src='curacaoblue.jpeg' alt=''>
+          <p>"Curacao Blue"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-7' src='crispy veg.jpeg' alt=''>
+          <p>"Crispy Veg!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='minipancakesbelgian.jpeg' alt=''>
+          <p>"Belgian pancakes"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='noodles.jpeg' alt=''>
+          <p>"Noodles..!"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-7' src='coffee.jpeg' alt=''>
+          <p>"coffee"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-8' src='harabharakabab.jpeg' alt=''>
+          <p>"Hara Bhara Kabab"</p>
+        </div>
+        <div>
+          <img class='grid-item grid-item-9' src='mocktailfront.jpeg' alt=''>
+          <p>"Good Vibes Only..!"</p>
+        </div>
+      </div>
+      </section>
+       <!-- footer section -->
+     <footer>
+      <div class="container">
+          <div class="foot">
+              <div class="icon-box">
+                <div class="icon">
+                  <a href="https://m.facebook.com/Frozen-restro-saharanpur-101591305758322/">
+                      <img src="https://img.icons8.com/fluency/48/000000/facebook.png"/></a>
+                     <br>
+              </div>
+              <div class="icon">
+                  <a href="https://instagram.com/frozen_restro_?utm_medium=copy_link">
+                      <img src="https://img.icons8.com/cute-clipart/64/000000/instagram-new.png"/></a>
+                  </div>
+              <div class="icon">
+                  <a
+                      href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LCgvNkrOSs4xYLRSNagwtjRITU1KSUu1NDGxNDcwtTKoMEo0SUs0sEwxTEu2TEtKMffiTSvKr0rNUyhKLS4pygcAy5gViQ&q=frozen+restro&oq=fro&aqs=chrome.1.69i57j46i39i175i199j46i199i433i465j46i433i512j0i433i512j0i433j69i60l2.4744j0j7&sourceid=chrome&ie=UTF-8">
+                      <img src="https://img.icons8.com/color/48/000000/chrome--v1.png"/></a>
+                      
+              </div>
+              <div class="icon">
+                  <a
+                      href="https://www.google.com/maps/place/FROZEN+RESTRO/@29.9575758,77.5472138,15z/data=!4m5!3m4!1s0x0:0x2a4fa09d1fc9fbd7!8m2!3d29.9575758!4d77.5472138">
+                      <img src="https://img.icons8.com/color/48/000000/google-maps-new.png"/></a>
+              </div>
+          </div>
+          </div>
+      </div>
+      <div class="copyright">
+          <p> &copy;2020| Frozen Restro</p>
+      </div>
+  </footer>
+  <!-- footer section End-->
+
+</body>
+</html>
